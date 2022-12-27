@@ -129,7 +129,7 @@
 .learnmore_button_circle_icon_arrow::before {
     position: absolute;
     content: "";
-    top: -0.25rem;
+    top: -0.35rem;
     right: 0.0625rem;
     width: 0.625rem;
     height: 0.625rem;
@@ -149,6 +149,11 @@
 
 .learnmore_title {
     margin-bottom: 30px;
+}
+
+.title_split {
+    color: rgb(170, 170, 170);
+    font-size: larger;
 }
 
 .learnmore_content {
