@@ -2,10 +2,9 @@
     position: relative;
     overflow: hidden;
     display: flex;
-    height: calc(100vh - 100px);
+    height: 100%;
     width: 100%;
     min-height: 600px;
-    max-height: 900px;
 }
 
 .banner {
@@ -32,10 +31,9 @@
 
 .banner_filter {
     position: absolute;
-    height: calc(100vh - 100px);
+    height: 100%;
     width: 100%;
     min-height: 600px;
-    max-height: 900px;
     background: linear-gradient(280deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.75) 100%);
 }
 
@@ -43,18 +41,17 @@
     position: relative;
     display: flex;
     width: 100%;
-    padding-top: 200px;
     padding-left: 10vw;
     padding-right: 10vw;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
     color: #fff;
 }
 
 .learnmore {
     position: relative;
-    font-family: "Oswald";
+    padding-bottom: 200px;
 }
 
 .learnmore_button {
@@ -149,6 +146,7 @@
 
 .learnmore_title {
     margin-bottom: 30px;
+    font-family: "Oswald";
 }
 
 .title_split {
