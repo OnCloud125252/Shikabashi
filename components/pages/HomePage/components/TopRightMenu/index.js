@@ -24,8 +24,6 @@ export default function TopRightMenu({ languagePack, language, setLanguage, isLo
     }, []);
 
     useEffect(() => {
-        console.log(windowDimensions.width);
-
         async function handleResize() {
             setWindowDimensions(getWindowDimensions(window));
         }
@@ -39,7 +37,14 @@ export default function TopRightMenu({ languagePack, language, setLanguage, isLo
 
     return (
         <>
-            <div className={join(styles.triangle)} style={{ "--rotate-angle": `${Math.atan(170 / windowDimensions.width)}rad` }}></div>
+            <div className={join(styles.triangle)}
+                style={{
+                    "opacity": isLoading ? "1" : "0.4",
+                    "--rotate-angle": isLoading ? "0deg" : `${Math.atan(170 / windowDimensions.width)}rad`,
+                    "height": isLoading ? "100vh" : "120px",
+                    "zIndex": isLoading ? "999" : "1",
+                }}>
+            </div>
             <div className={styles.menu_container}>
                 {/* <div className={join(styles.logo_container, "noselect")}>
                     <p>Shikabashi</p>

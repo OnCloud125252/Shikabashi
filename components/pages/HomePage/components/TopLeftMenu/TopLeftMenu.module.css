@@ -2,8 +2,16 @@
     position: absolute;
     transition: all 1s;
     width: 200vw;
-    height: 120px;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgb(0, 0, 0);
     transform-origin: left bottom;
     transform: rotate(var(--rotate-angle));
+    transition: 0s;
+}
+
+.logo {
+    position: static;
+    padding: 20px 0 0 30px;
+    transform-origin: left bottom;
+    transform: rotate(calc(360deg - var(--rotate-angle)));
+    transition: 0s;
 }

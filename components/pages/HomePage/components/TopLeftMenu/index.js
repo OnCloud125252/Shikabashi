@@ -1,7 +1,6 @@
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "./TopLeftMenu.module.css";
-// import contactLogo from "./contact.png";
-// import languageLogo from "./language.png";
 
 
 function join(...array) {
@@ -37,17 +36,13 @@ export default function TopLeftMenu({ languagePack, language, setLanguage, isLoa
 
     return (
         <>
-            <div className={join(styles.triangle)} style={{ "--rotate-angle": `-${Math.atan(130 / windowDimensions.width)}rad` }}></div>
-            <div className={styles.menu_container}>
-                {/* <div className={join(styles.logo_container, "noselect")}>
-                    <p>Shikabashi</p>
-                    <img alt="logo" src="./logo_noName.svg" />
-                </div> */}
-                {/* <ul>
-                    <li>
-
-                    </li>
-                </ul> */}
+            <div className={join(styles.triangle)} style={{
+                "opacity": isLoading ? "1" : "0.4",
+                "--rotate-angle": isLoading ? "0deg" : `-${Math.atan(130 / windowDimensions.width)}rad`,
+                "height": isLoading ? "100vh" : "120px",
+                "zIndex": isLoading ? "999" : "1",
+            }}>
+                <Image src="/logo_withName.svg" alt="Shikabashi logo" className={styles.logo} width={56} height={80} />
             </div>
         </>
     );
