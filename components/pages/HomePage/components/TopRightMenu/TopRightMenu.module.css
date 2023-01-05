@@ -6,5 +6,4 @@
     background-color: rgb(0, 0, 0);
     transform-origin: right bottom;
     transform: rotate(var(--rotate-angle));
-    transition: 0s;
 }

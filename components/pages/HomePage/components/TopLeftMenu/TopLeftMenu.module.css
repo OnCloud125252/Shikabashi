@@ -5,7 +5,6 @@
     background-color: rgb(0, 0, 0);
     transform-origin: left bottom;
     transform: rotate(var(--rotate-angle));
-    transition: 0s;
 }
 
 .logo {
@@ -13,5 +12,4 @@
     padding: 20px 0 0 30px;
     transform-origin: left bottom;
     transform: rotate(calc(360deg - var(--rotate-angle)));
-    transition: 0s;
 }
