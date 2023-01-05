@@ -55,15 +55,15 @@ body {
 
 /* 網頁捲軸【背景】顏色 */
 ::-webkit-scrollbar-track {
-    background: #404566;
+    background: #949494;
 }
 
 /* 網頁捲軸【把手】顏色 */
 ::-webkit-scrollbar-thumb {
-    background: #2b2e46;
+    background: #414141;
 }
 
 /* 網頁捲軸【滑過時】把手的顏色 */
 ::-webkit-scrollbar-thumb:hover {
-    background: #30344e;
+    background: #505050;
 }
