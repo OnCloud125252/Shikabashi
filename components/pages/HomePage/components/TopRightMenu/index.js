@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
+
 import styles from "./TopRightMenu.module.css";
-// import contactLogo from "./contact.png";
-// import languageLogo from "./language.png";
 
 
 function join(...array) {
     return array.join(" ");
 }
 
-export default function TopRightMenu({ languagePack, language, setLanguage, isLoading, setIsLoading }) {
+export default function TopRightMenu({ language, setLanguage, isLoading, setIsLoading }) {
     const [windowDimensions, setWindowDimensions] = useState(0);
 
     function getWindowDimensions(window) {
@@ -39,22 +38,11 @@ export default function TopRightMenu({ languagePack, language, setLanguage, isLo
         <>
             <div className={join(styles.triangle)}
                 style={{
-                    "opacity": isLoading ? "1" : "0.4",
-                    "--rotate-angle": isLoading ? "0deg" : `${Math.atan(170 / windowDimensions.width)}rad`,
-                    "height": isLoading ? "100vh" : "120px",
+                    "backgroundColor": isLoading ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0.4)",
+                    "--rotate-angle": isLoading ? "0deg" : `${Math.atan(190 / windowDimensions.width)}rad`,
+                    "height": isLoading ? "100vh" : "100px",
                     "zIndex": isLoading ? "999" : "1",
                 }}>
-            </div>
-            <div className={styles.menu_container}>
-                {/* <div className={join(styles.logo_container, "noselect")}>
-                    <p>Shikabashi</p>
-                    <img alt="logo" src="./logo_noName.svg" />
-                </div> */}
-                {/* <ul>
-                    <li>
-
-                    </li>
-                </ul> */}
             </div>
         </>
     );
