@@ -2,14 +2,89 @@
     position: absolute;
     transition: all 1s;
     width: 200vw;
-    background-color: rgb(0, 0, 0);
     transform-origin: left bottom;
     transform: rotate(var(--rotate-angle));
 }
 
-.logo {
-    position: static;
-    padding: 20px 0 0 30px;
+.navbar {
+    display: flex;
+    margin: 1.5vh 0 0 20px;
     transform-origin: left bottom;
     transform: rotate(calc(360deg - var(--rotate-angle)));
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.logo {
+    width: 100%;
+    display: block;
+    margin-right: 20px;
+    height: min-content;
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 60px;
+    max-height: 60px;
+}
+
+.menu {
+    display: flex;
+    font-size: large;
+    width: 30vw;
+    height: min-content;
+    justify-content: space-between;
+    flex-direction: row;
+    align-content: center;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+
+@media (max-width: 1330px) {
+    .item {
+        display: none;
+    }
+}
+
+.item {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    padding: 0 0.2em 0.2em 0.2em;
+    margin: 0;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.2em;
+    background-color: rgb(197, 152, 38);
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+}
+
+.item:hover::after,
+.item:focus::after {
+    opacity: 1;
+    transform: translate3d(0, 0.2em, 0);
+}
+
+.item {
+    overflow: hidden;
+}
+
+.item::after {
+    opacity: 1;
+    transform: translate3d(-110%, 0, 0);
+}
+
+.item:hover::after,
+.item:focus::after {
+    transform: translate3d(0, 0, 0);
 }
