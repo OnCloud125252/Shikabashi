@@ -6,7 +6,10 @@ function join(...array) {
     return array.join(" ");
 }
 
-export default function Banner({ language, isLoading, setIsLoading }) {
+export default function Banner({ parameters }) {
+    const language = parameters.language;
+    const setIsLoading = parameters.setIsLoading;
+
     return (
         <>
             <div className={join(styles.banner_container, "noselect")}>
@@ -34,4 +37,4 @@ export default function Banner({ language, isLoading, setIsLoading }) {
             </div>
         </>
     );
-};
+}
