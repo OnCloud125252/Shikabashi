@@ -2,5 +2,6 @@
     position: absolute;
     transition: all 0.8s;
     width: 200vw;
+    transform-origin: right bottom;
     transform: skewY(var(--rotate-angle));
 }

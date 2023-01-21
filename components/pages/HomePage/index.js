@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { languagePack } from "../../languagePack";
 import Banner from "./components/Banner";
-import TopLeftMenu from "./components/TopLeftMenu";
+import TopMenu from "./components/TopMenu";
 import TopRightMenu from "./components/TopRightMenu";
 import styles from "./HomePage.module.css";
 
@@ -21,8 +21,9 @@ export default function HomePage() {
 
     return (
         <div style={{ "--font-family": font_family[language] }} className={styles.index_container}>
-            <TopLeftMenu parameters={{
+            <TopMenu parameters={{
                 language,
+                setLanguage,
                 isLoading,
                 openMenu,
                 setOpenMenu
