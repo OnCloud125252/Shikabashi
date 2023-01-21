@@ -45,7 +45,7 @@ export default function TopLeftMenu({ parameters }) {
     return (
         <>
             <div className={join(styles.triangle)} style={{
-                "backgroundColor": isLoading ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0.4)",
+                "backgroundColor": isLoading ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0.3)",
                 "--rotate-angle": openMenu.isOpen ? `${-Math.atan(100 / windowDimensions.width)}rad` : "0deg",
                 "height": isLoading ? "100vh" : openMenu.isOpen ? openMenu.options.height : "70px",
                 "zIndex": isLoading ? "999" : "2",

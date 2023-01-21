@@ -40,9 +40,9 @@ export default function TopRightMenu({ parameters }) {
     return (
         <>
             <div className={join(styles.triangle)} style={{
-                "backgroundColor": isLoading ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0.4)",
+                "backgroundColor": isLoading ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0.3)",
                 "--rotate-angle": isLoading ? "0deg" : `${Math.atan(120 / windowDimensions.width)}rad`,
-                "height": isLoading ? "100vh" : openMenu.isOpen ? `calc(${openMenu.options.height} + 160px)` : "0px",
+                "height": isLoading ? "100vh" : openMenu.isOpen ? `calc(${openMenu.options.height} + 110px)` : "0px",
                 "zIndex": isLoading ? "999" : "1",
             }}>
             </div>
