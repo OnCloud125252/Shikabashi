@@ -1,7 +1,7 @@
 .triangle {
     position: absolute;
     transition: all 0.8s;
-    width: 200vw;
+    width: var(--width_WithoutScrollbar);
     transform-origin: right bottom;
     transform: skewY(var(--rotate-angle));
 }
