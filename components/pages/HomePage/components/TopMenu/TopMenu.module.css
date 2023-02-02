@@ -1,7 +1,7 @@
 .triangle {
     position: absolute;
     transition: all 0.8s;
-    width: 200vw;
+    width: var(--width_WithoutScrollbar);
     transform-origin: left bottom;
     transform: skewY(var(--rotate-angle));
 }
@@ -15,7 +15,7 @@
     justify-content: flex-start;
     position: absolute;
     transition: all 0.8s;
-    width: 200vw;
+    width: var(--width_WithoutScrollbar);
     height: 70px;
     transform-origin: left bottom;
     transform: skewY(calc(360deg - var(--rotate-angle)));
