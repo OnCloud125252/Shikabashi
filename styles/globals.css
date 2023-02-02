@@ -1,7 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;400;600;700&family=Noto+Serif+TC:wght@200;600;700&family=Oswald:wght@200;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;400;600;700&family=Noto+Serif+TC:wght@200;400;600;700&family=Oswald:wght@200;400;600;700&display=swap');
 
 * {
     font-family: var(--font-family);
+    --content-background-color: rgb(240, 240, 240);
+    --content-text-color: rgb(0, 0, 0);
+    --width_WithoutScrollbar: calc(100vw - 8px);
 }
 
 body {
@@ -49,21 +52,26 @@ body {
     animation-fill-mode: forwards;
 }
 
+:root {
+    scrollbar-color: #414141 #949494 !important;
+    scrollbar-width: thin !important;
+}
+
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px !important;
 }
 
 /* 網頁捲軸【背景】顏色 */
 ::-webkit-scrollbar-track {
-    background: #949494;
+    background: #949494 !important;
 }
 
 /* 網頁捲軸【把手】顏色 */
 ::-webkit-scrollbar-thumb {
-    background: #414141;
+    background: #414141 !important;
 }
 
 /* 網頁捲軸【滑過時】把手的顏色 */
 ::-webkit-scrollbar-thumb:hover {
-    background: #505050;
+    background: #505050 !important;
 }
