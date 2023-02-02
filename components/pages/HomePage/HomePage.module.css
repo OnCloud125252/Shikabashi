@@ -1,19 +1,13 @@
 .index_container {
     position: absolute;
-    width: 100vw;
+    width: var(--width_WithoutScrollbar);
     height: 100vh;
-    overflow-x: hidden;
 }
 
 .closeMenu {
     position: absolute;
     top: 0;
-    width: 100vw;
+    width: var(--width_WithoutScrollbar);
     height: 150vh;
     z-index: 1;
-}
-
-.content {
-    height: 1000px;
-    width: 100%;
 }
