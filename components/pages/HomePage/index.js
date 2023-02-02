@@ -4,6 +4,8 @@ import { languagePack } from "../../languagePack";
 import Banner from "./components/Banner";
 import TopMenu from "./components/TopMenu";
 import TopRightMenu from "./components/TopRightMenu";
+import Content from "./components/Content";
+import Footer from "./components/Footer";
 import styles from "./HomePage.module.css";
 
 
@@ -37,7 +39,14 @@ export default function HomePage() {
                 setIsLoading
             }} />
             {openMenu.isOpen ? <div className={styles.closeMenu} onClick={() => setOpenMenu({ isOpen: false })}></div> : <></>}
-            <div className={styles.content}></div>
+            {isLoading ? <></> :
+                <>
+                    <Content parameters={{
+                        language
+                    }} />
+                    <Footer></Footer>
+                </>
+            }
         </div>
     );
 };
