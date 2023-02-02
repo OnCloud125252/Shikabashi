@@ -16,8 +16,13 @@ export const languagePack = {
                         "zh-TW": "更多資訊",
                         "ja-JP": "詳しくは"
                     },
+                    "Scroll For More":{
+                        "en-US": "Scroll For More",
+                        "zh-TW": "查看更多",
+                        "ja-JP": null
+                    }
                 },
-                TopLeftMenu: {
+                TopMenu: {
                     "Creation Hall": {
                         "en-US": "Creation Hall",
                         "zh-TW": "創作大廳",
@@ -36,6 +41,13 @@ export const languagePack = {
                     "Contact Us": {
                         "en-US": "Contact Us",
                         "zh-TW": "聯絡我們",
+                        "ja-JP": null
+                    }
+                },
+                Content: {
+                    "Our Works": {
+                        "en-US": "Our Works",
+                        "zh-TW": "我們的作品",
                         "ja-JP": null
                     }
                 }
