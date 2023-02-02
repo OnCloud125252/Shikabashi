@@ -1,13 +1,9 @@
 .banner_container {
     position: relative;
-    overflow: hidden;
     display: flex;
     height: 100%;
-    width: 100%;
+    width: var(--width_WithoutScrollbar);
     min-height: 600px;
-}
-
-.banner {
     overflow: hidden;
 }
 
@@ -155,4 +151,28 @@
 
 .learnmore_content {
     max-width: 400px;
+}
+
+.arrow_down {
+    position: absolute;
+    z-index: 1;
+    border: none;
+    bottom: 0;
+    width: 100%;
+    height: var(--arrow_down__height);
+    color: var(--content-text-color);
+    font-weight: 400;
+    text-align: center;
+    line-height: 60px;
+}
+
+.arrow_down::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    bottom: 0;
+    border-left: calc(50vw - 10px) solid transparent;
+    border-right: 50vw solid transparent;
+    border-bottom: var(--arrow_down__height) solid var(--content-background-color);
 }

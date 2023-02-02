@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import { languagePack } from "../../../../languagePack";
 import styles from "./Banner.module.css";
 
@@ -10,12 +12,25 @@ export default function Banner({ parameters }) {
     const language = parameters.language;
     const setIsLoading = parameters.setIsLoading;
 
+    const [scrollY, setScrollY] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollY(window.scrollY);
+        };
+
+        handleScroll();
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);;
+    }, []);
+
     return (
         <>
             <div className={join(styles.banner_container, "noselect")}>
                 <div className={styles.banner}>
                     <div className={styles.banner_video}>
-                        <video autoPlay muted loop onPlaying={() => setIsLoading(false)} >
+                        <video autoPlay muted loop playsInline onTimeUpdate={() => setIsLoading(false)}>
                             <source src="/Fauna.mp4" type="video/mp4" />
                         </video>
                     </div>
@@ -33,6 +48,11 @@ export default function Banner({ parameters }) {
                             <span className={styles.learnmore_button_text}>{languagePack.pages.HomePage.components.Banner["Learn More"][language]}</span>
                         </button>
                     </div>
+                </div>
+                <div className={styles.arrow_down} style={{
+                    "--arrow_down__height": `${(50 - scrollY / 10) <= 0 ? 0 : (50 - scrollY / 10)}px`
+                }}>
+                    {languagePack.pages.HomePage.components.Banner["Scroll For More"][language]}
                 </div>
             </div>
         </>
