@@ -49,10 +49,10 @@ export default function TopLeftMenu({ parameters }) {
                 <nav className={join(styles.navbar, "noselect")}>
                     <div className={styles.menu}>
                         <Image src="/logo_noName.svg" alt="Shikabashi logo" className={styles.logo} width={600} height={600} />
-                        <p className={styles.item} onClick={() => setOpenMenu({ isOpen: true, options: { height: "300px" } })}>{languagePack.pages.HomePage.components.TopMenu["Creation Hall"][language]}</p>
-                        <p className={styles.item} onClick={() => setOpenMenu({ isOpen: true, options: { height: "400px" } })}>{languagePack.pages.HomePage.components.TopMenu["About Us"][language]}</p>
+                        <p className={styles.item} onClick={() => setOpenMenu({ isOpen: true, options: { height: "500px" } })}>{languagePack.pages.HomePage.components.TopMenu["Creation Hall"][language]}</p>
+                        <p className={styles.item} onClick={() => setOpenMenu({ isOpen: true, options: { height: "500px" } })}>{languagePack.pages.HomePage.components.TopMenu["About Us"][language]}</p>
                         <p className={styles.item} onClick={() => setOpenMenu({ isOpen: true, options: { height: "500px" } })}>{languagePack.pages.HomePage.components.TopMenu["Frequently Asked"][language]}</p>
-                        <p className={styles.item} onClick={() => setOpenMenu({ isOpen: true, options: { height: "600px" } })}>{languagePack.pages.HomePage.components.TopMenu["Contact Us"][language]}</p>
+                        <p className={styles.item} onClick={() => setOpenMenu({ isOpen: true, options: { height: "500px" } })}>{languagePack.pages.HomePage.components.TopMenu["Contact Us"][language]}</p>
                     </div>
                     <div className={styles.language}></div>
                 </nav>
