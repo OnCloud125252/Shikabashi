@@ -4,14 +4,42 @@
 }
 
 .profile_container {
-    padding: 40px 80px;
+    padding: 80px 10%;
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
     flex-direction: row;
-    gap: 40px;
+}
+
+.profile_content {
+    border: 1px solid white;
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    --corner-border: 4px;
+    --corner-border-padding: 5px;
+    background:
+        /* top left */
+        linear-gradient(to right, white var(--corner-border), transparent 0) var(--corner-border-padding) var(--corner-border-padding),
+        linear-gradient(to bottom, white var(--corner-border), transparent 0) var(--corner-border-padding) var(--corner-border-padding),
+        /* top right */
+        linear-gradient(to left, white var(--corner-border), transparent 0) calc(100% - var(--corner-border-padding)) var(--corner-border-padding),
+        linear-gradient(to bottom, white var(--corner-border), transparent 0) calc(100% - var(--corner-border-padding)) var(--corner-border-padding),
+        /* bottom right */
+        linear-gradient(to left, white var(--corner-border), transparent 0) calc(100% - var(--corner-border-padding)) calc(100% - var(--corner-border-padding)),
+        linear-gradient(to top, white var(--corner-border), transparent 0) calc(100% - var(--corner-border-padding)) calc(100% - var(--corner-border-padding)),
+        /* bottom left */
+        linear-gradient(to right, white var(--corner-border), transparent 0) var(--corner-border-padding) calc(100% - var(--corner-border-padding)),
+        linear-gradient(to top, white var(--corner-border), transparent 0) var(--corner-border-padding) calc(100% - var(--corner-border-padding));
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
 }
 
 .profile_image {
@@ -21,19 +49,35 @@
     height: auto;
     border-radius: 50%;
     cursor: pointer;
-}
-
-.profile_content {
-    width: 80%;
-    max-width: 400px;
+    transform: scale(1.25);
 }
 
 .profile_name {
     color: #ffffff;
     font-size: xx-large;
-    margin: 0 0 1em 0;
+    text-align: right;
+    margin: 30px;
+    padding: 10px 15px;
+    height: min-content;
 }
 
 .profile_description {
     color: #949ca7;
+    margin: 30px;
+    padding: 10px 15px;
+}
+
+@media (max-width: 1500px) {
+    .profile_container {
+        padding: 30px 10%;
+    }
+
+    .profile_content {
+        flex-direction: column;
+        gap: 80px;
+    }
+
+    .profile_image {
+        transform: scale(1.5);
+    }
 }

@@ -10,11 +10,11 @@ export default function Footer({ parameters }) {
         <>
             <div className={styles.footer}>
                 <div className={styles.profile_container}>
-                    <Image src={profile_image} alt="profile image" width={2747} height={2747} className={styles.profile_image} />
                     <div className={styles.profile_content}>
                         <p className={styles.profile_name}>
                             Seki
                         </p>
+                        <Image src={profile_image} alt="profile image" width={2747} height={2747} className={styles.profile_image} />
                         <p className={styles.profile_description}>
                             商業洽談 聯絡洽詢: <a href="mailto:contact@newmd.eu.org?subject=Test%20Business%20Negotiation">contact@newmd.eu.org</a><br />
                             連動合作、其他 聯絡洽詢: <a href="mailto:contact@newmd.eu.org?subject=Test%20Other%20Negotiation">contact@newmd.eu.org</a><br />
