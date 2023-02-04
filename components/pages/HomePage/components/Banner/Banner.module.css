@@ -70,8 +70,8 @@
     outline: none;
 }
 
-.learnmore_button:focus {
-    outline: 0;
+.learnmore_button:hover {
+    outline: none;
 }
 
 .learnmore_button_text {
@@ -121,7 +121,7 @@
 .learnmore_button_circle_icon_arrow::before {
     position: absolute;
     content: "";
-    top: -0.35rem;
+    top: -0.3rem;
     right: 0.0625rem;
     width: 0.625rem;
     height: 0.625rem;
@@ -133,10 +133,6 @@
 .learnmore_button:hover .learnmore_button_circle_icon_arrow {
     background: #fff;
     transform: translate(1rem, 0);
-}
-
-.learnmore_button:hover .learnmore_button_text {
-    color: #fff;
 }
 
 .learnmore_title {
