@@ -1,7 +1,7 @@
 .content {
-    position: absolute;
     height: fit-content;
     width: 100%;
+    padding: 80px 0 80px 0;
     color: var(--content-text-color);
     background-color: var(--content-background-color);
 }
@@ -9,7 +9,7 @@
 
 .title {
     position: relative;
-    margin: 60px 0 30px 0;
+    margin-bottom: 40px;
     text-align: center;
 }
 
@@ -40,14 +40,27 @@
 .card_container {
     margin: 0 auto;
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 30px;
     grid-template-columns: repeat(3, 1fr);
-    width: 80%;
+    grid-auto-rows: 1fr;
+    width: 85%;
     max-width: 2000px;
 }
 
 .card_16x9 {
     aspect-ratio: 16 / 9;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 2px solid rgb(70, 70, 70);
+    background-color: rgb(70, 70, 70);
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card_10x18 {
+    grid-row: span 2;
     position: relative;
     box-sizing: border-box;
     border-radius: 10px;
@@ -70,16 +83,10 @@
     -ms-user-select: none;
 }
 
-.card_10x18 {
-    grid-row: span 2;
-    position: relative;
-    box-sizing: border-box;
-    border-radius: 10px;
-    border: 2px solid rgb(70, 70, 70);
-    background-color: rgb(70, 70, 70);
-    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
-    overflow: hidden;
-    cursor: pointer;
+.card_16x9:hover .image,
+.card_10x18:hover .image {
+    filter: blur(3px) brightness(0.6);
+    transform: scale(0.97);
 }
 
 .image {
@@ -89,12 +96,6 @@
     object-fit: cover;
     border-radius: 10px;
     transition-duration: 0.4s;
-}
-
-.card_16x9:hover .image,
-.card_10x18:hover .image {
-    filter: blur(3px) brightness(0.6);
-    transform: scale(0.97);
 }
 
 .card_content_container {
@@ -120,4 +121,21 @@
 .card_description {
     color: rgb(201, 201, 201);
     cursor: text;
+}
+
+@media (max-width: 1300px) {
+    .card_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card_16x9_empty {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .card_container {
+        grid-gap: 30px;
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
