@@ -5,7 +5,7 @@ import Banner from "./components/Banner";
 import TopMenu from "./components/TopMenu";
 import TopRightMenu from "./components/TopRightMenu";
 import Content from "./components/Content";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 import styles from "./HomePage.module.css";
 
 
@@ -44,7 +44,9 @@ export default function HomePage() {
                     <Content parameters={{
                         language
                     }} />
-                    {/* <Footer></Footer> */}
+                    <Footer parameters={{
+                        language
+                    }} />
                 </>
             }
         </div>

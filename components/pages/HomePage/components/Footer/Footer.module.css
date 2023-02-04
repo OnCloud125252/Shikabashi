@@ -1,0 +1,39 @@
+.footer {
+    width: 100%;
+    background-color: #22272e;
+}
+
+.profile_container {
+    padding: 40px 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.profile_image {
+    aspect-ratio: 1 / 1;
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.profile_content {
+    width: 80%;
+    max-width: 400px;
+}
+
+.profile_name {
+    color: #ffffff;
+    font-size: xx-large;
+    margin: 0 0 1em 0;
+}
+
+.profile_description {
+    color: #949ca7;
+}
