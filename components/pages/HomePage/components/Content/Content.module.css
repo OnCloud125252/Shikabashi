@@ -1,15 +1,13 @@
 .content {
-    height: fit-content;
     width: 100%;
-    padding: 80px 0 80px 0;
+    padding: 1px 0 80px 0;
     color: var(--content-text-color);
     background-color: var(--content-background-color);
 }
 
-
 .title {
     position: relative;
-    margin-bottom: 40px;
+    margin: 80px 0 40px 0;
     text-align: center;
 }
 
@@ -17,7 +15,7 @@
     position: relative;
     z-index: 2;
     padding: 0 10px 0 10px;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 40px;
     background-color: var(--content-background-color);
 }
@@ -107,7 +105,6 @@
     box-sizing: border-box;
     padding: 25px;
 }
-
 
 .card_title {
     position: relative;
