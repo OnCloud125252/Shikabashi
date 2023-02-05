@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getCookie, setCookie } from "cookies-next";
 
 import { languagePack } from "../../languagePack";
 import Banner from "./components/Banner";
@@ -10,7 +11,10 @@ import styles from "./HomePage.module.css";
 
 
 export default function HomePage() {
+    const languageList = Object.keys(languagePack.languages);
+
     const [language, setLanguage] = useState("zh-TW"); // zh-TW, en-US, ja-JP
+    const [languagePosition, setLanguagePosition] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
     const [openMenu, setOpenMenu] = useState({
         isOpen: false,
@@ -19,16 +23,23 @@ export default function HomePage() {
         }
     });
 
-    const font_family = languagePack.font_family;
+    const font_family = languagePack.languages[language].fontFamily;
+
+    useEffect(() => {
+        const defaultLanguage = languageList.includes(getCookie("language")) ? getCookie("language") : "zh-TW";
+        setLanguage(defaultLanguage);
+        setLanguagePosition(languageList.findIndex(ele => ele === defaultLanguage));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
-        <div style={{ "--font-family": font_family[language] }} className={styles.index_container}>
+        <div style={{ "--font-family": font_family }} className={styles.index_container}>
             <TopMenu parameters={{
                 language,
-                setLanguage,
                 isLoading,
                 openMenu,
-                setOpenMenu
+                setOpenMenu,
+                switchLanguage
             }} />
             <TopRightMenu parameters={{
                 isLoading,
@@ -38,7 +49,7 @@ export default function HomePage() {
                 language,
                 setIsLoading
             }} />
-            {openMenu.isOpen ? <div className={styles.closeMenu} onClick={() => setOpenMenu({ isOpen: false })}></div> : <></>}
+            {openMenu.isOpen ? <div className={styles.closeMenu} onClick={() => setOpenMenu({ isOpen: false })} /> : <></>}
             {isLoading ? <></> :
                 <>
                     <Content parameters={{
@@ -51,4 +62,27 @@ export default function HomePage() {
             }
         </div>
     );
+
+    function switchLanguage(switchPosition) {
+        var position = languagePosition;
+        if (switchPosition === "forward") {
+            if ((position + 1) > (languageList.length - 1)) {
+                position = 0;
+            }
+            else {
+                position++;
+            }
+        }
+        else if (switchPosition === "backward") {
+            if ((position - 1) < 0) {
+                position = languageList.length - 1;
+            }
+            else {
+                position--;
+            }
+        }
+        setLanguagePosition(position);
+        setLanguage(languageList[position]);
+        setCookie("language", languageList[position]);
+    }
 };

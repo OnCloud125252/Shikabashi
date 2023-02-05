@@ -5,29 +5,18 @@ import { languagePack } from "../../../../languagePack";
 import styles from "./TopMenu.module.css";
 
 
-function join(...array) {
-    return array.join(" ");
-}
-
 export default function TopLeftMenu({ parameters }) {
     const language = parameters.language;
-    const setLanguage = parameters.setLanguage;
     const isLoading = parameters.isLoading;
     const openMenu = parameters.openMenu;
     const setOpenMenu = parameters.setOpenMenu;
+    const switchLanguage = parameters.switchLanguage;
 
     const [windowDimensions, setWindowDimensions] = useState(0);
 
-    function getWindowDimensions(window) {
-        const { innerWidth: width, innerHeight: height } = window;
-        return {
-            width,
-            height
-        };
-    }
-
     useEffect(() => {
         setWindowDimensions(getWindowDimensions(window));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
@@ -54,9 +43,28 @@ export default function TopLeftMenu({ parameters }) {
                         <p className={styles.item} onClick={() => setOpenMenu({ isOpen: true, options: { height: "500px" } })}>{languagePack.pages.HomePage.components.TopMenu["Frequently Asked"][language]}</p>
                         <p className={styles.item} onClick={() => setOpenMenu({ isOpen: true, options: { height: "500px" } })}>{languagePack.pages.HomePage.components.TopMenu["Contact Us"][language]}</p>
                     </div>
-                    <div className={styles.language}></div>
+                    <div className={styles.languageChanger}>
+                        <div className={styles.languageChanger_leftArrow} onClick={() => switchLanguage("backward")} />
+                        {languagePack.languages[language].displayName}
+                        <div className={styles.languageChanger_rightArrow} onClick={() => switchLanguage("forward")} />
+                    </div>
                 </nav>
             </div>
         </>
     );
+
+
 }
+
+function join(...array) {
+    return array.join(" ");
+}
+
+function getWindowDimensions(window) {
+    const { innerWidth: width, innerHeight: height } = window;
+    return {
+        width,
+        height
+    };
+}
+

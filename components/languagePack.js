@@ -1,8 +1,17 @@
 export const languagePack = {
-    font_family: {
-        "en-US": "Oswald, sans-serif",
-        "zh-TW": "Noto Serif TC, serif",
-        "ja-JP": "Noto Serif JP, serif"
+    languages: {
+        "en-US": {
+            displayName: "English",
+            fontFamily: "Oswald, sans-serif"
+        },
+        "zh-TW": {
+            displayName: "中文(繁)",
+            fontFamily: "Noto Serif TC, serif"
+        },
+        "ja-JP": {
+            displayName: "日本語",
+            fontFamily: "Noto Serif JP, serif"
+        }
     },
     pages: {
         HomePage: {
@@ -16,7 +25,7 @@ export const languagePack = {
                         "zh-TW": "更多資訊",
                         "ja-JP": "詳しくは"
                     },
-                    "Scroll For More":{
+                    "Scroll For More": {
                         "en-US": "Scroll For More",
                         "zh-TW": "查看更多",
                         "ja-JP": null

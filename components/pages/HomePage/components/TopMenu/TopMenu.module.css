@@ -12,7 +12,7 @@
     flex-wrap: wrap;
     align-content: center;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     position: absolute;
     transition: all 0.8s;
     width: var(--width_WithoutScrollbar);
@@ -44,6 +44,10 @@
 }
 
 @media (max-width: 720px) {
+    .menu {
+        width: auto;
+    }
+
     .item {
         display: none;
     }
@@ -78,4 +82,67 @@
 .item:hover::after,
 .item:focus::after {
     transform: scaleX(1);
+}
+
+.languageChanger {
+    --languageChanger_height: 30px;
+    position: relative;
+    margin-right: 30px;
+    height: var(--languageChanger_height);
+    width: 120px;
+    border-radius: var(--languageChanger_height);
+    border: 2px solid rgb(255, 255, 255);
+    text-align: center;
+    line-height: var(--languageChanger_height);
+    color: #fff;
+}
+
+.languageChanger_leftArrow {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    height: calc(var(--languageChanger_height) * 0.3);
+    width: calc(var(--languageChanger_height) * 0.3);
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: translateY(-50%) rotate(225deg);
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+@media (any-pointer: fine) {
+    .languageChanger_leftArrow:hover {
+        transform: translateX(-3px) translateY(-50%) rotate(225deg);
+    }
+}
+
+@media (any-pointer: coarse) {
+    .languageChanger_leftArrow:active {
+        transform: translateX(-3px) translateY(-50%) rotate(225deg);
+    }
+}
+
+.languageChanger_rightArrow {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    height: calc(var(--languageChanger_height) * 0.3);
+    width: calc(var(--languageChanger_height) * 0.3);
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: translateY(-50%) rotate(45deg);
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+@media (any-pointer: fine) {
+    .languageChanger_rightArrow:hover {
+        transform: translateX(3px) translateY(-50%) rotate(45deg);
+    }
+}
+
+@media (any-pointer: coarse) {
+    .languageChanger_rightArrow:active {
+        transform: translateX(3px) translateY(-50%) rotate(45deg);
+    }
 }
