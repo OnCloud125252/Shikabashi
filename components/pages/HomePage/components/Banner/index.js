@@ -28,7 +28,7 @@ export default function Banner({ parameters }) {
     return (
         <>
             <div className={join(styles.banner_container, "noselect")}>
-                <div className={styles.banner}>
+                <div className={styles.banner_video_container}>
                     <div className={styles.banner_video}>
                         <video autoPlay muted loop playsInline onTimeUpdate={() => setIsLoading(false)}>
                             <source src="/Fauna.mp4" type="video/mp4" />
