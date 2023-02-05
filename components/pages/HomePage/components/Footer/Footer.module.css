@@ -81,3 +81,8 @@
         transform: scale(1.5);
     }
 }
+
+.contact_email {
+    color: rgb(57, 126, 255);
+    text-decoration: underline;
+}
