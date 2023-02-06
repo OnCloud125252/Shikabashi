@@ -1,18 +1,22 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { getCookie, setCookie } from "cookies-next";
 
-import { languagePack } from "../../../../languagePack";
+import { LanguageContex } from "../../contexts/contexts";
+import { languagePack } from "../languagePack";
 import styles from "./TopMenu.module.css";
 
 
 export default function TopLeftMenu({ parameters }) {
-    const language = parameters.language;
+    const languageList = Object.keys(languagePack.languages);
+
     const isLoading = parameters.isLoading;
     const openMenu = parameters.openMenu;
     const setOpenMenu = parameters.setOpenMenu;
-    const switchLanguage = parameters.switchLanguage;
 
+    const { language, setLanguage } = useContext(LanguageContex);
     const [windowDimensions, setWindowDimensions] = useState(0);
+    const [languagePosition, setLanguagePosition] = useState(languageList.findIndex(ele => ele === language));
 
     useEffect(() => {
         setWindowDimensions(getWindowDimensions(window));
@@ -53,7 +57,28 @@ export default function TopLeftMenu({ parameters }) {
         </>
     );
 
-
+    function switchLanguage(switchPosition) {
+        var position = languagePosition;
+        if (switchPosition === "forward") {
+            if ((position + 1) > (languageList.length - 1)) {
+                position = 0;
+            }
+            else {
+                position++;
+            }
+        }
+        else if (switchPosition === "backward") {
+            if ((position - 1) < 0) {
+                position = languageList.length - 1;
+            }
+            else {
+                position--;
+            }
+        }
+        setLanguagePosition(position);
+        setLanguage(languageList[position]);
+        setCookie("language", languageList[position]);
+    }
 }
 
 function join(...array) {
@@ -67,4 +92,3 @@ function getWindowDimensions(window) {
         height
     };
 }
-
