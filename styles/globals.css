@@ -4,7 +4,7 @@
     font-family: var(--font-family);
     --content-background-color: rgb(240, 240, 240);
     --content-text-color: rgb(0, 0, 0);
-    --width_WithoutScrollbar: calc(100vw - 8px);
+    --width_WithoutScrollbar: 100%;
 }
 
 body {
