@@ -1,10 +1,13 @@
 import Image from "next/image";
+import { useContext } from "react";
+
+import { LanguageContex } from "../../../../../contexts/contexts";
 import { languagePack } from "../../../../languagePack";
 import styles from "./Content.module.css";
 
 
-export default function Content({ parameters }) {
-    const language = parameters.language;
+export default function Content() {
+    const { language, setLanguage } = useContext(LanguageContex);
 
     return (
         <>

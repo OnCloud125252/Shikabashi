@@ -1,10 +1,13 @@
 import Image from "next/image";
+import { useContext } from "react";
+
+import { LanguageContex } from "../../../../../contexts/contexts";
 import profile_image from "./profile.jpg";
 import styles from "./Footer.module.css";
 
 
-export default function Footer({ parameters }) {
-    const language = parameters.language;
+export default function Footer() {
+    const { language, setLanguage } = useContext(LanguageContex);
 
     return (
         <>
