@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 
+import { LanguageContex } from "../../../../../contexts/contexts";
 import { languagePack } from "../../../../languagePack";
 import styles from "./Banner.module.css";
 
@@ -9,9 +10,9 @@ function join(...array) {
 }
 
 export default function Banner({ parameters }) {
-    const language = parameters.language;
     const setIsLoading = parameters.setIsLoading;
 
+    const { language, setLanguage } = useContext(LanguageContex);
     const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
