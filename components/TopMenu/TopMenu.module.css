@@ -1,8 +1,16 @@
-.triangle {
+.triangle_top {
     position: absolute;
     transition: all 0.8s;
     width: var(--width_WithoutScrollbar);
     transform-origin: left bottom;
+    transform: skewY(var(--rotate-angle));
+}
+
+.triangle_right {
+    position: absolute;
+    transition: all 0.8s;
+    width: var(--width_WithoutScrollbar);
+    transform-origin: right bottom;
     transform: skewY(var(--rotate-angle));
 }
 
@@ -41,6 +49,14 @@
     max-width: 900px;
     height: min-content;
     margin: 0 0 0 20px;
+}
+
+.closeMenu {
+    position: absolute;
+    top: 0;
+    width: var(--width_WithoutScrollbar);
+    height: 150vh;
+    z-index: 1;
 }
 
 @media (max-width: 720px) {

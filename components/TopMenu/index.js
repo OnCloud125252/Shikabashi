@@ -1,22 +1,28 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useEffect, useState, useContext } from "react";
-import { getCookie, setCookie } from "cookies-next";
+import { setCookie } from "cookies-next";
 
 import { LanguageContex } from "../../contexts/contexts";
 import { languagePack } from "../languagePack";
 import styles from "./TopMenu.module.css";
 
 
-export default function TopLeftMenu({ parameters }) {
+export default function TopMenu({ parameters }) {
     const languageList = Object.keys(languagePack.languages);
 
     const isLoading = parameters.isLoading;
-    const openMenu = parameters.openMenu;
-    const setOpenMenu = parameters.setOpenMenu;
+    const router = useRouter();
 
     const { language, setLanguage } = useContext(LanguageContex);
     const [windowDimensions, setWindowDimensions] = useState(0);
     const [languagePosition, setLanguagePosition] = useState(languageList.findIndex(ele => ele === language));
+    const [openMenu, setOpenMenu] = useState({
+        isOpen: false,
+        options: {
+            height: "500px"
+        }
+    });
 
     useEffect(() => {
         setWindowDimensions(getWindowDimensions(window));
@@ -33,19 +39,19 @@ export default function TopLeftMenu({ parameters }) {
 
     return (
         <>
-            <div className={join(styles.triangle)} style={{
+            <div className={join(styles.triangle_top)} style={{
                 "backgroundColor": isLoading ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0.3)",
                 "--rotate-angle": openMenu.isOpen ? `${-Math.atan(100 / windowDimensions.width)}rad` : "0deg",
                 "height": isLoading ? "100vh" : openMenu.isOpen ? openMenu.options.height : "70px",
-                "zIndex": isLoading ? "999" : "2",
+                "zIndex": isLoading ? "999" : "3",
             }}>
                 <nav className={join(styles.navbar, "noselect")}>
                     <div className={styles.menu}>
-                        <Image src="/logo_noName.svg" alt="Shikabashi logo" className={styles.logo} width={600} height={600} />
+                        <Image className={styles.logo} onClick={() => router.push("/")} src="/logo_noName.svg" alt="Shikabashi logo" width={600} height={600} />
                         <p className={styles.item} onClick={() => setOpenMenu({ isOpen: true, options: { height: "500px" } })}>{languagePack.pages.HomePage.components.TopMenu["Creation Hall"][language]}</p>
                         <p className={styles.item} onClick={() => setOpenMenu({ isOpen: true, options: { height: "500px" } })}>{languagePack.pages.HomePage.components.TopMenu["About Us"][language]}</p>
                         <p className={styles.item} onClick={() => setOpenMenu({ isOpen: true, options: { height: "500px" } })}>{languagePack.pages.HomePage.components.TopMenu["Frequently Asked"][language]}</p>
-                        <p className={styles.item} onClick={() => setOpenMenu({ isOpen: true, options: { height: "500px" } })}>{languagePack.pages.HomePage.components.TopMenu["Contact Us"][language]}</p>
+                        <p className={styles.item} onClick={() => router.push("/contact_us")}>{languagePack.pages.HomePage.components.TopMenu["Contact Us"][language]}</p>
                     </div>
                     <div className={styles.languageChanger}>
                         <div className={styles.languageChanger_leftArrow} onClick={() => switchLanguage("backward")} />
@@ -54,6 +60,13 @@ export default function TopLeftMenu({ parameters }) {
                     </div>
                 </nav>
             </div>
+            <div className={join(styles.triangle_right)} style={{
+                "backgroundColor": isLoading ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0.3)",
+                "--rotate-angle": isLoading ? "0deg" : `${Math.atan(120 / windowDimensions.width)}rad`,
+                "height": isLoading ? "100vh" : openMenu.isOpen ? `${openMenu.options.height}` : "0px",
+                "zIndex": isLoading ? "999" : "2",
+            }} />
+            {openMenu.isOpen ? <div className={styles.closeMenu} onClick={() => setOpenMenu({ isOpen: false })} /> : <></>}
         </>
     );
 

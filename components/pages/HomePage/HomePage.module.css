@@ -2,11 +2,3 @@
     position: absolute;
     width: var(--width_WithoutScrollbar);
 }
-
-.closeMenu {
-    position: absolute;
-    top: 0;
-    width: var(--width_WithoutScrollbar);
-    height: 150vh;
-    z-index: 1;
-}
