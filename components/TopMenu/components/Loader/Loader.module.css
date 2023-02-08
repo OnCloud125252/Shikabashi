@@ -1,0 +1,126 @@
+.mosaicLoader {
+    --cell-size: 25px;
+    --cell-spacing: 1px;
+    --border-width: 1px;
+    --cells: 4;
+    --total-size: calc(var(--cells) * (var(--cell-size) + 2 * var(--cell-spacing)));
+    display: flex;
+    flex-wrap: wrap;
+    width: var(--total-size);
+    height: var(--total-size);
+    transition-duration: 0.5s;
+}
+
+.mosaicLoader>.cell {
+    --cell-color: white;
+    flex: 0 0 var(--cell-size);
+    margin: var(--cell-spacing);
+    background-color: transparent;
+    animation: 1.5s ripple ease infinite;
+}
+
+.mosaicLoader>.cell.d_1 {
+    animation-delay: 100ms;
+}
+
+.mosaicLoader>.cell.d_2 {
+    animation-delay: 200ms;
+}
+
+.mosaicLoader>.cell.d_3 {
+    animation-delay: 300ms;
+}
+
+.mosaicLoader>.cell.d_4 {
+    animation-delay: 400ms;
+}
+
+.mosaicLoader>.cell.d_5 {
+    animation-delay: 500ms;
+}
+
+.mosaicLoader>.cell.d_6 {
+    animation-delay: 600ms;
+}
+
+.mosaicLoader>.cell:nth-child(1) {
+    --cell-color: #d4aee0;
+}
+
+.mosaicLoader>.cell:nth-child(2) {
+    --cell-color: #8975b4;
+}
+
+.mosaicLoader>.cell:nth-child(3) {
+    --cell-color: #64518a;
+}
+
+.mosaicLoader>.cell:nth-child(4) {
+    --cell-color: #565190;
+}
+
+.mosaicLoader>.cell:nth-child(5) {
+    --cell-color: #44abac;
+}
+
+.mosaicLoader>.cell:nth-child(6) {
+    --cell-color: #2ca7d8;
+}
+
+.mosaicLoader>.cell:nth-child(7) {
+    --cell-color: #1482ce;
+}
+
+.mosaicLoader>.cell:nth-child(8) {
+    --cell-color: #05597c;
+}
+
+.mosaicLoader>.cell:nth-child(9) {
+    --cell-color: #b2dd57;
+}
+
+.mosaicLoader>.cell:nth-child(10) {
+    --cell-color: #57c443;
+}
+
+.mosaicLoader>.cell:nth-child(11) {
+    --cell-color: #05b853;
+}
+
+.mosaicLoader>.cell:nth-child(12) {
+    --cell-color: #19962e;
+}
+
+.mosaicLoader>.cell:nth-child(13) {
+    --cell-color: #fdc82e;
+}
+
+.mosaicLoader>.cell:nth-child(14) {
+    --cell-color: #fd9c2e;
+}
+
+.mosaicLoader>.cell:nth-child(15) {
+    --cell-color: #d5385a;
+}
+
+.mosaicLoader>.cell:nth-child(16) {
+    --cell-color: #911750;
+}
+
+@keyframes ripple {
+    0% {
+        background-color: transparent;
+    }
+
+    30% {
+        background-color: var(--cell-color);
+    }
+
+    60% {
+        background-color: transparent;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
