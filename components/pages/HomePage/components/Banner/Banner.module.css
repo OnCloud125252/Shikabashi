@@ -169,7 +169,7 @@
     z-index: -1;
     left: 0;
     bottom: 0;
-    border-left: calc(50vw - 10px) solid transparent;
+    border-left: 50vw solid transparent;
     border-right: 50vw solid transparent;
     border-bottom: var(--arrow_down__height) solid var(--content-background-color);
 }
