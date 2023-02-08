@@ -1,19 +1,3 @@
-.triangle_top {
-    position: absolute;
-    transition: all 0.8s;
-    width: var(--width_WithoutScrollbar);
-    transform-origin: left bottom;
-    transform: skewY(var(--rotate-angle));
-}
-
-.triangle_right {
-    position: absolute;
-    transition: all 0.8s;
-    width: var(--width_WithoutScrollbar);
-    transform-origin: right bottom;
-    transform: skewY(var(--rotate-angle));
-}
-
 .navbar {
     display: flex;
     flex-direction: row;
@@ -27,6 +11,7 @@
     height: 70px;
     transform-origin: left bottom;
     transform: skewY(calc(360deg - var(--rotate-angle)));
+    z-index: 4;
 }
 
 .logo {
@@ -98,85 +83,4 @@
 .item:hover::after,
 .item:focus::after {
     transform: scaleX(1);
-}
-
-.languageChanger {
-    --languageChanger_height: 30px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin: 20px 30px 0 0;
-    width: 110px;
-    border-radius: calc(var(--languageChanger_height) / 2);
-    border: 2px solid rgb(255, 255, 255);
-    background-color: rgb(221, 221, 221);
-    text-align: left;
-    line-height: var(--languageChanger_height);
-    overflow: hidden;
-}
-
-.languageChanger_arrowDown {
-    position: absolute;
-    right: 10%;
-    top: calc(10px - var(--languageChanger_height) * 0.3 * 0.4142);
-    height: calc(var(--languageChanger_height) * 0.3);
-    width: calc(var(--languageChanger_height) * 0.3);
-    border-top: 0.125rem solid rgb(0, 0, 0);
-    border-right: 0.125rem solid rgb(0, 0, 0);
-    transform: rotate(135deg);
-    transition-duration: 0.2s;
-    cursor: pointer;
-}
-
-@media (any-pointer: fine) {
-    .selectedLanguage:hover .languageChanger_arrowDown {
-        transform: translateY(3px) rotate(135deg);
-    }
-}
-
-@media (any-pointer: coarse) {
-    .selectedLanguage:active .languageChanger_arrowDown {
-        transform: translateY(3px) rotate(135deg);
-    }
-}
-
-.languageChanger_arrowUp {
-    position: absolute;
-    right: 10%;
-    top: 13px;
-    height: calc(var(--languageChanger_height) * 0.3);
-    width: calc(var(--languageChanger_height) * 0.3);
-    border-top: 0.125rem solid rgb(0, 0, 0);
-    border-right: 0.125rem solid rgb(0, 0, 0);
-    transform: rotate(315deg);
-    transition-duration: 0.2s;
-    cursor: pointer;
-}
-
-@media (any-pointer: fine) {
-    .selectedLanguage:hover .languageChanger_arrowUp {
-        transform: translateY(-3px) rotate(315deg);
-    }
-}
-
-@media (any-pointer: coarse) {
-    .selectedLanguage:active .languageChanger_arrowUp {
-        transform: translateY(-3px) rotate(315deg);
-    }
-}
-
-.selectedLanguage {
-    cursor: pointer;
-}
-
-.selectedLanguage,
-.languageDropdownOption {
-    outline: 1px solid rgb(255, 255, 255);
-    cursor: pointer;
-    padding-left: 15px;
-    transition-duration: 0.4s;
-}
-
-.languageDropdownOption:hover {
-    background-color: rgb(255, 255, 255);
 }

@@ -1,0 +1,19 @@
+.triangle_top {
+    position: absolute;
+    transition: all 0.8s;
+    width: var(--width_WithoutScrollbar);
+    transform-origin: left bottom;
+    transform: skewY(var(--rotate-angle));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.triangle_right {
+    position: absolute;
+    transition: all 0.8s;
+    width: var(--width_WithoutScrollbar);
+    transform-origin: right bottom;
+    transform: skewY(var(--rotate-angle));
+}
