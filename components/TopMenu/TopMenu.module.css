@@ -102,63 +102,81 @@
 
 .languageChanger {
     --languageChanger_height: 30px;
-    position: relative;
-    margin-right: 30px;
-    height: var(--languageChanger_height);
-    width: 120px;
-    border-radius: var(--languageChanger_height);
-    border: 2px solid rgb(255, 255, 255);
-    text-align: center;
-    line-height: var(--languageChanger_height);
-    color: #fff;
-}
-
-.languageChanger_leftArrow {
     position: absolute;
-    left: 10%;
-    top: 50%;
-    height: calc(var(--languageChanger_height) * 0.3);
-    width: calc(var(--languageChanger_height) * 0.3);
-    border-top: 0.125rem solid #fff;
-    border-right: 0.125rem solid #fff;
-    transform: translateY(-50%) rotate(225deg);
-    transition-duration: 0.2s;
-    cursor: pointer;
+    right: 0;
+    top: 0;
+    margin: 20px 30px 0 0;
+    width: 110px;
+    border-radius: calc(var(--languageChanger_height) / 2);
+    border: 2px solid rgb(255, 255, 255);
+    background-color: rgb(221, 221, 221);
+    text-align: left;
+    line-height: var(--languageChanger_height);
+    overflow: hidden;
 }
 
-@media (any-pointer: fine) {
-    .languageChanger_leftArrow:hover {
-        transform: translateX(-3px) translateY(-50%) rotate(225deg);
-    }
-}
-
-@media (any-pointer: coarse) {
-    .languageChanger_leftArrow:active {
-        transform: translateX(-3px) translateY(-50%) rotate(225deg);
-    }
-}
-
-.languageChanger_rightArrow {
+.languageChanger_arrowDown {
     position: absolute;
     right: 10%;
-    top: 50%;
+    top: calc(10px - var(--languageChanger_height) * 0.3 * 0.4142);
     height: calc(var(--languageChanger_height) * 0.3);
     width: calc(var(--languageChanger_height) * 0.3);
-    border-top: 0.125rem solid #fff;
-    border-right: 0.125rem solid #fff;
-    transform: translateY(-50%) rotate(45deg);
+    border-top: 0.125rem solid rgb(0, 0, 0);
+    border-right: 0.125rem solid rgb(0, 0, 0);
+    transform: rotate(135deg);
     transition-duration: 0.2s;
     cursor: pointer;
 }
 
 @media (any-pointer: fine) {
-    .languageChanger_rightArrow:hover {
-        transform: translateX(3px) translateY(-50%) rotate(45deg);
+    .selectedLanguage:hover .languageChanger_arrowDown {
+        transform: translateY(3px) rotate(135deg);
     }
 }
 
 @media (any-pointer: coarse) {
-    .languageChanger_rightArrow:active {
-        transform: translateX(3px) translateY(-50%) rotate(45deg);
+    .selectedLanguage:active .languageChanger_arrowDown {
+        transform: translateY(3px) rotate(135deg);
     }
+}
+
+.languageChanger_arrowUp {
+    position: absolute;
+    right: 10%;
+    top: 13px;
+    height: calc(var(--languageChanger_height) * 0.3);
+    width: calc(var(--languageChanger_height) * 0.3);
+    border-top: 0.125rem solid rgb(0, 0, 0);
+    border-right: 0.125rem solid rgb(0, 0, 0);
+    transform: rotate(315deg);
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+@media (any-pointer: fine) {
+    .selectedLanguage:hover .languageChanger_arrowUp {
+        transform: translateY(-3px) rotate(315deg);
+    }
+}
+
+@media (any-pointer: coarse) {
+    .selectedLanguage:active .languageChanger_arrowUp {
+        transform: translateY(-3px) rotate(315deg);
+    }
+}
+
+.selectedLanguage {
+    cursor: pointer;
+}
+
+.selectedLanguage,
+.languageDropdownOption {
+    outline: 1px solid rgb(255, 255, 255);
+    cursor: pointer;
+    padding-left: 15px;
+    transition-duration: 0.4s;
+}
+
+.languageDropdownOption:hover {
+    background-color: rgb(255, 255, 255);
 }

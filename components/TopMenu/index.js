@@ -16,13 +16,13 @@ export default function TopMenu({ parameters }) {
 
     const { language, setLanguage } = useContext(LanguageContex);
     const [windowDimensions, setWindowDimensions] = useState(0);
-    const [languagePosition, setLanguagePosition] = useState(languageList.findIndex(ele => ele === language));
     const [openMenu, setOpenMenu] = useState({
         isOpen: false,
         options: {
             height: "500px"
         }
     });
+    const [showDropdown, setShowDropdown] = useState(false);
 
     useEffect(() => {
         setWindowDimensions(getWindowDimensions(window));
@@ -54,9 +54,24 @@ export default function TopMenu({ parameters }) {
                         <p className={styles.item} onClick={() => router.push("/contact_us")}>{languagePack.pages.HomePage.components.TopMenu["Contact Us"][language]}</p>
                     </div>
                     <div className={styles.languageChanger}>
-                        <div className={styles.languageChanger_leftArrow} onClick={() => switchLanguage("backward")} />
-                        {languagePack.languages[language].displayName}
-                        <div className={styles.languageChanger_rightArrow} onClick={() => switchLanguage("forward")} />
+                        <div className={styles.selectedLanguage} onClick={() => setShowDropdown(!showDropdown)}>
+                            {languagePack.languages[language].displayName}
+                            {showDropdown ? <div className={styles.languageChanger_arrowUp} /> : <div className={styles.languageChanger_arrowDown} />}
+                        </div>
+                        {
+                            showDropdown ? (
+                                languageList
+                                    .filter((languageCode) => languageCode !== language)
+                                    .map((languageCode, index) =>
+                                        <div key={index} className={styles.languageDropdownOption} onClick={() => {
+                                            switchLanguageTo(languageCode);
+                                            setShowDropdown(false);
+                                        }} style={{ "fontFamily": languagePack.languages[languageCode].fontFamily }}>
+                                            {languagePack.languages[languageCode].displayName}
+                                        </div>
+                                    )
+                            ) : <></>
+                        }
                     </div>
                 </nav>
             </div>
@@ -70,27 +85,9 @@ export default function TopMenu({ parameters }) {
         </>
     );
 
-    function switchLanguage(switchPosition) {
-        var position = languagePosition;
-        if (switchPosition === "forward") {
-            if ((position + 1) > (languageList.length - 1)) {
-                position = 0;
-            }
-            else {
-                position++;
-            }
-        }
-        else if (switchPosition === "backward") {
-            if ((position - 1) < 0) {
-                position = languageList.length - 1;
-            }
-            else {
-                position--;
-            }
-        }
-        setLanguagePosition(position);
-        setLanguage(languageList[position]);
-        setCookie("language", languageList[position]);
+    function switchLanguageTo(languageCode) {
+        setLanguage(languageCode);
+        setCookie("language", languageCode);
     }
 }
 
