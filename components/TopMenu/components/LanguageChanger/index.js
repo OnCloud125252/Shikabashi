@@ -12,15 +12,12 @@ export default function LanguageChanger({ language, setLanguage }) {
 
     const [showDropdown, setShowDropdown] = useState(false);
 
-
     return (
         <>
             <div className={styles.languageChanger}>
                 <div className={styles.selectedLanguage} onClick={() => setShowDropdown(!showDropdown)}>
                     {languagePack.languages[language].displayName}
-                    {/* <div className={styles.globe}>🌐</div> */}
                     <Image className={styles.globe} src={globe} alt="globe image" width={24} height={24} />
-                    {/* {showDropdown ? <div className={styles.languageChanger_arrowUp} /> : <div className={styles.languageChanger_arrowDown} />} */}
                 </div>
                 {
                     showDropdown ? (

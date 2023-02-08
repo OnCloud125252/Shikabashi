@@ -10,8 +10,6 @@ import styles from "./TopMenu.module.css";
 
 
 export default function TopMenu({ parameters }) {
-    const languageList = Object.keys(languagePack.languages);
-
     const isLoading = parameters.isLoading;
     const router = useRouter();
 
@@ -21,7 +19,6 @@ export default function TopMenu({ parameters }) {
     const [menuOption, setMenuOption] = useState({
         height: "500px"
     });
-    const [showDropdown, setShowDropdown] = useState(false);
 
     useEffect(() => {
         setWindowDimensions(getWindowDimensions(window));

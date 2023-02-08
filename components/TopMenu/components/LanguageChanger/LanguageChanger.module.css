@@ -1,9 +1,9 @@
 .languageChanger {
-    --languageChanger_height: 30px;
+    --languageChanger_height: 40px;
     position: absolute;
     right: 0;
     top: 0;
-    margin: 20px 30px 0 0;
+    margin: 15px 30px 0 0;
     width: 110px;
     border-radius: calc(var(--languageChanger_height) / 2);
     border: 1px solid rgb(201, 201, 201);
@@ -14,58 +14,6 @@
     overflow: hidden;
 }
 
-
-
-/* .languageChanger_arrowDown {
-    position: absolute;
-    right: 10%;
-    top: calc(10px - var(--languageChanger_height) * 0.3 * 0.4142);
-    height: calc(var(--languageChanger_height) * 0.3);
-    width: calc(var(--languageChanger_height) * 0.3);
-    border-top: 0.125rem solid rgb(255, 255, 255);
-    border-right: 0.125rem solid rgb(255, 255, 255);
-    transform: rotate(135deg);
-    transition-duration: 0.2s;
-    cursor: pointer;
-}
-
-@media (any-pointer: fine) {
-    .selectedLanguage:hover .languageChanger_arrowDown {
-        transform: translateY(3px) rotate(135deg);
-    }
-}
-
-@media (any-pointer: coarse) {
-    .selectedLanguage:active .languageChanger_arrowDown {
-        transform: translateY(3px) rotate(135deg);
-    }
-}
-
-.languageChanger_arrowUp {
-    position: absolute;
-    right: 10%;
-    top: 13px;
-    height: calc(var(--languageChanger_height) * 0.3);
-    width: calc(var(--languageChanger_height) * 0.3);
-    border-top: 0.125rem solid rgb(255, 255, 255);
-    border-right: 0.125rem solid rgb(255, 255, 255);
-    transform: rotate(315deg);
-    transition-duration: 0.2s;
-    cursor: pointer;
-}
-
-@media (any-pointer: fine) {
-    .selectedLanguage:hover .languageChanger_arrowUp {
-        transform: translateY(-3px) rotate(315deg);
-    }
-}
-
-@media (any-pointer: coarse) {
-    .selectedLanguage:active .languageChanger_arrowUp {
-        transform: translateY(-3px) rotate(315deg);
-    }
-} */
-
 .selectedLanguage {
     cursor: pointer;
     position: relative;
@@ -74,11 +22,9 @@
 .globe {
     position: absolute;
     top: 50%;
-    right: 0;
+    left: 0;
     transform: translateY(-50%);
-    margin-right: 5px;
-    width: 20px;
-    height: 20px;
+    margin-left: 10px;
     color: rgb(0, 0, 0);
     font-family: monospace;
     font-size: 20px;
@@ -86,10 +32,10 @@
 
 .selectedLanguage,
 .languageDropdownOption {
-    /* border: 1px solid rgb(255, 255, 255);
-    margin: -1px; */
+    height: var(--languageChanger_height);
     cursor: pointer;
-    padding-left: 15px;
+    text-align: right;
+    padding-right: 10px;
     transition-duration: 0.4s;
     font-weight: 900;
 }
