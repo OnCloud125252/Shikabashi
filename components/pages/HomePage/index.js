@@ -13,10 +13,8 @@ export default function HomePage() {
     const { language, setLanguage } = useContext(LanguageContex);
     const [isLoading, setIsLoading] = useState(true);
 
-    const font_family = languagePack.languages[language].fontFamily;
-
     return (
-        <div style={{ "--font-family": font_family }} className={styles.index_container}>
+        <div  className={styles.index_container}>
             <TopMenu parameters={{
                 isLoading
             }} />

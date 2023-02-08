@@ -1,5 +1,7 @@
 import styles from "./Loader.module.css";
 
+import { join } from "../../../functions";
+
 
 export default function Loader({ isLoading }) {
     return (
@@ -24,8 +26,4 @@ export default function Loader({ isLoading }) {
             </div>
         </>
     );
-}
-
-function join(...array) {
-    return array.join(" ");
 }

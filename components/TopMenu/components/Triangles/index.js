@@ -1,6 +1,8 @@
 import Loader from "../Loader";
 import styles from "./Triangle.module.css";
 
+import { join } from "../../../functions";
+
 
 export default function Triangles({ isLoading, openMenu, menuOption, windowDimensions }) {
     return (
@@ -21,8 +23,4 @@ export default function Triangles({ isLoading, openMenu, menuOption, windowDimen
             }} />
         </>
     );
-}
-
-function join(...array) {
-    return array.join(" ");
 }

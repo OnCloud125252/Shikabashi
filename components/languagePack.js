@@ -15,9 +15,6 @@ export const languagePack = {
     },
     pages: {
         HomePage: {
-            index: {
-
-            },
             components: {
                 Banner: {
                     "Learn More": {
@@ -31,28 +28,6 @@ export const languagePack = {
                         "ja-JP": null
                     }
                 },
-                TopMenu: {
-                    "Creation Hall": {
-                        "en-US": "Creation Hall",
-                        "zh-TW": "創作大廳",
-                        "ja-JP": null
-                    },
-                    "About Us": {
-                        "en-US": "About Us",
-                        "zh-TW": "關於我們",
-                        "ja-JP": null
-                    },
-                    "Frequently Asked": {
-                        "en-US": "Frequently Asked",
-                        "zh-TW": "常見問題",
-                        "ja-JP": null
-                    },
-                    "Contact Us": {
-                        "en-US": "Contact Us",
-                        "zh-TW": "聯絡我們",
-                        "ja-JP": null
-                    }
-                },
                 Content: {
                     "Our Works": {
                         "en-US": "Our Works",
@@ -61,6 +36,29 @@ export const languagePack = {
                     }
                 }
             }
+        },
+        ContactUsPage: {}
+    },
+    TopMenu: {
+        "Creation Hall": {
+            "en-US": "Creation Hall",
+            "zh-TW": "創作大廳",
+            "ja-JP": null
+        },
+        "About Us": {
+            "en-US": "About Us",
+            "zh-TW": "關於我們",
+            "ja-JP": null
+        },
+        "Frequently Asked": {
+            "en-US": "Frequently Asked",
+            "zh-TW": "常見問題",
+            "ja-JP": null
+        },
+        "Contact Us": {
+            "en-US": "Contact Us",
+            "zh-TW": "聯絡我們",
+            "ja-JP": null
         }
     }
 };
