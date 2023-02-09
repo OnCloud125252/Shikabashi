@@ -11,9 +11,9 @@ export default function Footer() {
 
     return (
         <>
-            <div className={styles.footer}>
+            <footer className={styles.footer}>
                 <div className={styles.profile_container}>
-                    <div className={styles.profile_content}>
+                    <article className={styles.profile_content}>
                         <p className={styles.profile_name}>
                             Seki
                         </p>
@@ -28,9 +28,9 @@ export default function Footer() {
                             <br />
                             ⚠️⚠️食物、生物與含電池的物品是NG的喔⚠️⚠️
                         </p>
-                    </div>
+                    </article>
                 </div>
-            </div>
+            </footer>
         </>
     );
 }

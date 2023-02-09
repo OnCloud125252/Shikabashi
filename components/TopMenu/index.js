@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState, useContext } from "react";
 
@@ -37,24 +38,38 @@ export default function TopMenu({ parameters }) {
     return (
         <>
             <Triangles isLoading={isLoading} openMenu={openMenu} menuOption={menuOption} windowDimensions={windowDimensions} />
-            <nav className={join(styles.navbar, "noselect")}>
-                <div className={styles.menu}>
-                    <Image className={styles.logo} onClick={() => router.push("/")} src="/logo_noName.svg" alt="Shikabashi logo" width={600} height={600} />
-                    <p className={styles.item} onClick={() => openMenuTo(500)}>
+            <div className={join(styles.navbar, "noselect")}>
+                <nav className={styles.menu}>
+                    <Link className={styles.logo} href="/">
+                        <Image onClick={() => router.push("/")} src="/logo_noName.svg" alt="Shikabashi logo" width={600} height={600} />
+                    </Link>
+                    <p tabindex="0" className={styles.item}
+                        onKeyDown={(event) => { if (event.key === "Enter") openMenuTo(500); }}
+                        onClick={() => openMenuTo(500)}
+                    >
                         {languagePack.TopMenu["Creation Hall"][language]}
                     </p>
-                    <p className={styles.item} onClick={() => openMenuTo(500)}>
+                    <p tabindex="0" className={styles.item}
+                        onKeyDown={(event) => { if (event.key === "Enter") openMenuTo(500); }}
+                        onClick={() => openMenuTo(500)}
+                    >
                         {languagePack.TopMenu["About Us"][language]}
                     </p>
-                    <p className={styles.item} onClick={() => openMenuTo(500)}>
+                    <p tabindex="0" className={styles.item}
+                        onKeyDown={(event) => { if (event.key === "Enter") openMenuTo(500); }}
+                        onClick={() => openMenuTo(500)}
+                    >
                         {languagePack.TopMenu["Frequently Asked"][language]}
                     </p>
-                    <p className={styles.item} onClick={() => router.push("/contact_us")}>
+                    <p tabindex="0" className={styles.item}
+                        onKeyDown={(event) => { if (event.key === "Enter") router.push("/contact_us"); }}
+                        onClick={() => router.push("/contact_us")}
+                    >
                         {languagePack.TopMenu["Contact Us"][language]}
                     </p>
-                </div>
+                </nav>
                 <LanguageChanger language={language} setLanguage={setLanguage} />
-            </nav>
+            </div>
             {openMenu ? <div className={styles.closeMenu} onClick={() => setOpenMenu(false)} /> : <></>}
         </>
     );

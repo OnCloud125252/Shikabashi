@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useEffect, useState, useContext } from "react";
 
 import { LanguageContex } from "../../../../../contexts/contexts";
@@ -42,12 +43,12 @@ export default function Banner({ parameters }) {
                         <h1 className={styles.learnmore_title}>
                             Ceres Fauna <label className={styles.title_split}>|</label> Christmas ASMR
                         </h1>
-                        <button className={styles.learnmore_button} title={languagePack.pages.HomePage.components.Banner["Learn More"][language]}>
+                        <Link href="/" className={styles.learnmore_button} title={languagePack.pages.HomePage.components.Banner["Learn More"][language]}>
                             <span className={styles.learnmore_button_circle} aria-hidden="true">
                                 <span className={join(styles.learnmore_button_circle_icon, styles.learnmore_button_circle_icon_arrow)}></span>
                             </span>
                             <span className={styles.learnmore_button_text}>{languagePack.pages.HomePage.components.Banner["Learn More"][language]}</span>
-                        </button>
+                        </Link>
                     </div>
                 </div>
                 <div className={styles.arrow_down} style={{

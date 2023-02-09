@@ -53,7 +53,6 @@
 .learnmore_button {
     position: relative;
     display: inline-block;
-    outline: none;
     cursor: pointer;
     border: 0;
     border-radius: 1.625rem;
@@ -65,13 +64,9 @@
     height: auto;
 }
 
-.learnmore_button:hover .learnmore_button_circle {
+.learnmore_button:hover .learnmore_button_circle,
+.learnmore_button:focus .learnmore_button_circle {
     width: 100%;
-    outline: none;
-}
-
-.learnmore_button:hover {
-    outline: none;
 }
 
 .learnmore_button_text {
@@ -130,7 +125,8 @@
     transform: rotate(45deg);
 }
 
-.learnmore_button:hover .learnmore_button_circle_icon_arrow {
+.learnmore_button:hover .learnmore_button_circle_icon_arrow,
+.learnmore_button:focus .learnmore_button_circle_icon_arrow {
     background: #fff;
     transform: translate(1rem, 0);
 }

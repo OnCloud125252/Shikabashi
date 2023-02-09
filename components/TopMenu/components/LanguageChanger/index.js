@@ -15,7 +15,10 @@ export default function LanguageChanger({ language, setLanguage }) {
     return (
         <>
             <div className={styles.languageChanger}>
-                <div className={styles.selectedLanguage} onClick={() => setShowDropdown(!showDropdown)}>
+                <div tabindex="0" className={styles.selectedLanguage}
+                    onKeyDown={(event) => { if (event.key === "Enter") setShowDropdown(!showDropdown); }}
+                    onClick={() => setShowDropdown(!showDropdown)}
+                >
                     {languagePack.languages[language].displayName}
                     <Image className={styles.globe} src={globe} alt="globe image" width={24} height={24} />
                 </div>
@@ -24,10 +27,11 @@ export default function LanguageChanger({ language, setLanguage }) {
                         languageList
                             .filter((languageCode) => languageCode !== language)
                             .map((languageCode, index) =>
-                                <div key={index} className={styles.languageDropdownOption} onClick={() => {
-                                    switchLanguageTo(languageCode);
-                                    setShowDropdown(false);
-                                }} style={{ "fontFamily": languagePack.languages[languageCode].fontFamily }}>
+                                <div key={index} tabindex="0" className={styles.languageDropdownOption}
+                                    onKeyDown={(event) => { if (event.key === "Enter") switchLanguageTo(languageCode); }}
+                                    onClick={() => switchLanguageTo(languageCode)}
+                                    style={{ "fontFamily": languagePack.languages[languageCode].fontFamily }}
+                                >
                                     {languagePack.languages[languageCode].displayName}
                                 </div>
                             )
@@ -40,5 +44,6 @@ export default function LanguageChanger({ language, setLanguage }) {
     function switchLanguageTo(languageCode) {
         setLanguage(languageCode);
         setCookie("language", languageCode);
+        setShowDropdown(false);
     }
 }

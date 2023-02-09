@@ -15,9 +15,12 @@
 }
 
 .logo {
+    margin-right: 20px;
+}
+
+.logo>img{
     width: 50px;
     height: 50px;
-    margin-right: 20px;
     display: block;
     height: min-content;
     cursor: pointer;
