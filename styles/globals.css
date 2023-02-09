@@ -1,6 +1,6 @@
 * {
     font-family: var(--font-family);
-    --content-background-color: rgb(240, 240, 240);
+    --content-background-color: rgb(221, 221, 221);
     --content-text-color: rgb(0, 0, 0);
     --width_WithoutScrollbar: 100%;
 }
