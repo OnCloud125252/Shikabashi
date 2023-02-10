@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useContext } from "react";
 
 import { LanguageContex } from "../../../../../contexts/contexts";
@@ -17,7 +18,9 @@ export default function Footer() {
                         <p className={styles.profile_name}>
                             Seki
                         </p>
-                        <Image src={profile_image} alt="profile image" width={2747} height={2747} className={styles.profile_image} />
+                        <Link href="/" className={styles.profile_image}>
+                            <Image src={profile_image} alt="profile image" width={2747} height={2747} />
+                        </Link>
                         <p className={styles.profile_description}>
                             商業洽談 聯絡洽詢: <a href="mailto:contact@newmd.eu.org?subject=Test%20Business%20Negotiation" className={styles.contact_email}>contact@newmd.eu.org</a><br />
                             連動合作、其他 聯絡洽詢: <a href="mailto:contact@newmd.eu.org?subject=Test%20Other%20Negotiation" className={styles.contact_email}>contact@newmd.eu.org</a><br />

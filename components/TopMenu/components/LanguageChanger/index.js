@@ -15,7 +15,7 @@ export default function LanguageChanger({ language, setLanguage }) {
     return (
         <>
             <div className={styles.languageChanger}>
-                <div tabindex="0" className={styles.selectedLanguage}
+                <div tabIndex="0" className={styles.selectedLanguage}
                     onKeyDown={(event) => { if (event.key === "Enter") setShowDropdown(!showDropdown); }}
                     onClick={() => setShowDropdown(!showDropdown)}
                 >
@@ -27,7 +27,7 @@ export default function LanguageChanger({ language, setLanguage }) {
                         languageList
                             .filter((languageCode) => languageCode !== language)
                             .map((languageCode, index) =>
-                                <div key={index} tabindex="0" className={styles.languageDropdownOption}
+                                <div key={index} tabIndex="0" className={styles.languageDropdownOption}
                                     onKeyDown={(event) => { if (event.key === "Enter") switchLanguageTo(languageCode); }}
                                     onClick={() => switchLanguageTo(languageCode)}
                                     style={{ "fontFamily": languagePack.languages[languageCode].fontFamily }}

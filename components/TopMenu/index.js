@@ -43,25 +43,25 @@ export default function TopMenu({ parameters }) {
                     <Link className={styles.logo} href="/">
                         <Image onClick={() => router.push("/")} src="/logo_noName.svg" alt="Shikabashi logo" width={600} height={600} />
                     </Link>
-                    <p tabindex="0" className={styles.item}
+                    <p tabIndex="0" className={styles.item}
                         onKeyDown={(event) => { if (event.key === "Enter") openMenuTo(500); }}
                         onClick={() => openMenuTo(500)}
                     >
                         {languagePack.TopMenu["Creation Hall"][language]}
                     </p>
-                    <p tabindex="0" className={styles.item}
+                    <p tabIndex="0" className={styles.item}
                         onKeyDown={(event) => { if (event.key === "Enter") openMenuTo(500); }}
                         onClick={() => openMenuTo(500)}
                     >
                         {languagePack.TopMenu["About Us"][language]}
                     </p>
-                    <p tabindex="0" className={styles.item}
+                    <p tabIndex="0" className={styles.item}
                         onKeyDown={(event) => { if (event.key === "Enter") openMenuTo(500); }}
                         onClick={() => openMenuTo(500)}
                     >
                         {languagePack.TopMenu["Frequently Asked"][language]}
                     </p>
-                    <p tabindex="0" className={styles.item}
+                    <p tabIndex="0" className={styles.item}
                         onKeyDown={(event) => { if (event.key === "Enter") router.push("/contact_us"); }}
                         onClick={() => router.push("/contact_us")}
                     >
