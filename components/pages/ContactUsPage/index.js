@@ -15,6 +15,7 @@ export default function ContactUsPage() {
                 <TopMenu parameters={{
                     isLoading
                 }} />
+                <h1><br /><br />{languagePack.pages.ContactUsPage.index["Test Message"][language]}</h1>
             </div>
         </>
     );

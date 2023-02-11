@@ -37,7 +37,15 @@ export const languagePack = {
                 }
             }
         },
-        ContactUsPage: {}
+        ContactUsPage: {
+            index: {
+                "Test Message": {
+                    "en-US": "Test Message",
+                    "zh-TW": "測試訊息",
+                    "ja-JP": null
+                }
+            }
+        }
     },
     TopMenu: {
         "Creation Hall": {

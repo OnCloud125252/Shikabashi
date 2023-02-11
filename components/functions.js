@@ -1,3 +1,6 @@
+import { languagePack } from "./languagePack";
+
+
 export function getRequiredTextsURI(objArray, language) {
     return objArray.map((objName) => {
         const requiredTexts = (function getText(obj, language) {
@@ -10,8 +13,13 @@ export function getRequiredTextsURI(objArray, language) {
                 }
             }
             return wantedValues.filter(ele => typeof (ele) !== "object");
-        })(objName, language).join("");
-        return encodeURIComponent(requiredTexts);
+        })(objName, language);
+
+        for (const languageName in languagePack.languages) {
+            requiredTexts.push(languagePack.languages[languageName].displayName);
+        }
+
+        return encodeURIComponent(requiredTexts.join(""));
     }).join("");
 }
 
