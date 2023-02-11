@@ -1,15 +1,15 @@
 .languageChanger {
-    --languageChanger_height: 40px;
+    --languageChanger-height: 35px;
     position: absolute;
     right: 0;
     top: 0;
-    margin: 15px 30px 0 0;
+    margin: calc(var(--topMenu-height) / 2 - var(--languageChanger-height) / 2) 30px 0 0;
     width: 110px;
-    border-radius: calc(var(--languageChanger_height) / 2);
+    border-radius: calc(var(--languageChanger-height) / 2);
     border: 1px solid rgb(201, 201, 201);
     background-color: rgba(0, 0, 0, 0.55);
     text-align: left;
-    line-height: var(--languageChanger_height);
+    line-height: var(--languageChanger-height);
     color: rgb(255, 255, 255);
 }
 
@@ -31,7 +31,7 @@
 
 .selectedLanguage,
 .languageDropdownOption {
-    height: var(--languageChanger_height);
+    height: var(--languageChanger-height);
     cursor: pointer;
     text-align: right;
     padding-right: 10px;

@@ -1,4 +1,4 @@
 .index_container {
     position: absolute;
-    width: var(--width_WithoutScrollbar);
+    width: 100%;
 }

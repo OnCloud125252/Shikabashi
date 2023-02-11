@@ -1,8 +1,8 @@
 .content {
     width: 100%;
     padding: 1px 0 80px 0;
-    color: var(--content-text-color);
-    background-color: var(--content-background-color);
+    color: var(--contentText-color);
+    background-color: var(--contentBackground-color);
 }
 
 .title {
@@ -17,7 +17,7 @@
     padding: 0 10px 0 10px;
     font-weight: 400;
     font-size: 40px;
-    background-color: var(--content-background-color);
+    background-color: var(--contentBackground-color);
 }
 
 .title::after {

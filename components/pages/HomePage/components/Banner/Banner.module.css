@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     height: 100vh;
-    width: var(--width_WithoutScrollbar);
+    width: 100%;
     min-height: 600px;
     overflow: hidden;
 }
@@ -152,8 +152,8 @@
     border: none;
     bottom: 0;
     width: 100%;
-    height: var(--arrow_down__height);
-    color: var(--content-text-color);
+    height: var(--arrowDown-height);
+    color: var(--contentText-color);
     font-weight: 400;
     text-align: center;
     line-height: 60px;
@@ -167,5 +167,5 @@
     bottom: 0;
     border-left: 50vw solid transparent;
     border-right: 50vw solid transparent;
-    border-bottom: var(--arrow_down__height) solid var(--content-background-color);
+    border-bottom: var(--arrowDown-height) solid var(--contentBackground-color);
 }

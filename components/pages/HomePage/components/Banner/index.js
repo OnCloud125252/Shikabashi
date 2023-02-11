@@ -52,7 +52,7 @@ export default function Banner({ parameters }) {
                     </div>
                 </div>
                 <div className={styles.arrow_down} style={{
-                    "--arrow_down__height": `${(50 - scrollY / 10) <= 0 ? 0 : (50 - scrollY / 10)}px`
+                    "--arrowDown-height": `${(50 - scrollY / 10) <= 0 ? 0 : (50 - scrollY / 10)}px`
                 }}>
                     {languagePack.pages.HomePage.components.Banner["Scroll For More"][language]}
                 </div>
