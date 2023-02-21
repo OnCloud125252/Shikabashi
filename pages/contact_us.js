@@ -22,7 +22,12 @@ export default function ContactUs() {
         <>
             <Head>
                 <title>Contact Us | Shikabashi</title>
-                <link rel="stylesheet" href={`https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;400;600;900&display=swap&text=${requiredFonts__zh_TW}`} />
+                <style>{`
+                    @font-face {
+                        font-family: CSong3HK-Medium;
+                        src: url("/api/font?family=CSong3HK-Medium&text=${requiredFonts__zh_TW}") format("opentype");
+                    }
+                `}</style>
                 <link rel="stylesheet" href={`https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;400;600;900&display=swap&text=${requiredFonts__ja_JP}`} />
             </Head>
             <main style={{ "--font-family": font_family }}>

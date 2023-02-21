@@ -6,7 +6,7 @@ export const languagePack = {
         },
         "zh-TW": {
             displayName: "中文(繁)",
-            fontFamily: "Noto Serif TC, serif"
+            fontFamily: "CSong3HK-Medium"
         },
         "ja-JP": {
             displayName: "日本語",
