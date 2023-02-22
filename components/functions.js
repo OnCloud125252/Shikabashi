@@ -1,6 +1,10 @@
 import { languagePack } from "./languagePack";
 
 
+export function haveProperties(object, requiredProperties) {
+    return requiredProperties.every(key => Object.keys(object).includes(key));
+}
+
 export function getRequiredTextsURI(objArray, language) {
     return objArray.map((objName) => {
         const requiredTexts = (function getText(obj, language) {
