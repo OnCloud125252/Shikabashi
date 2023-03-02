@@ -1,3 +1,5 @@
+@import url("reset.css");
+
 * {
     font-family: var(--font-family);
     --contentBackground-color: rgb(221, 221, 221);
