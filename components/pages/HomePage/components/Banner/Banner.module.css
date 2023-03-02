@@ -65,7 +65,7 @@
 }
 
 .learnmore_button:hover .learnmore_button_circle,
-.learnmore_button:focus .learnmore_button_circle {
+.learnmore_button:focus-visible .learnmore_button_circle {
     width: 100%;
 }
 
@@ -126,7 +126,7 @@
 }
 
 .learnmore_button:hover .learnmore_button_circle_icon_arrow,
-.learnmore_button:focus .learnmore_button_circle_icon_arrow {
+.learnmore_button:focus-visible .learnmore_button_circle_icon_arrow {
     background: #fff;
     transform: translate(1rem, 0);
 }

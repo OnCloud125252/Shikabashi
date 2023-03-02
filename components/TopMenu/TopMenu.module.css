@@ -82,6 +82,6 @@
 }
 
 .item:hover::after,
-.item:focus::after {
+.item:focus-visible::after {
     transform: scaleX(1);
 }
