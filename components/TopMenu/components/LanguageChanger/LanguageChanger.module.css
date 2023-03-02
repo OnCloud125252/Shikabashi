@@ -11,6 +11,7 @@
     text-align: left;
     line-height: var(--languageChanger-height);
     color: rgb(255, 255, 255);
+    overflow: hidden;
 }
 
 .selectedLanguage {
@@ -37,6 +38,20 @@
     padding-right: 10px;
     transition-duration: 0.4s;
     font-weight: 600;
+}
+
+.languageDropdownOption:first-child {
+    border-top-left-radius: calc(var(--languageChanger-height) / 2);
+    border-top-right-radius: calc(var(--languageChanger-height) / 2);
+}
+
+.languageDropdownOption:last-child {
+    border-bottom-left-radius: calc(var(--languageChanger-height) / 2);
+    border-bottom-right-radius: calc(var(--languageChanger-height) / 2);
+}
+
+.languageDropdownOption:focus-visible {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .languageDropdownOption:hover {
