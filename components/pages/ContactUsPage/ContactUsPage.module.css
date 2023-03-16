@@ -1,4 +1,38 @@
 .contactUs_container {
     position: absolute;
     width: 100%;
+    text-align: center;
+}
+
+.clipText {
+    width: 100%;
+    padding-top: var(--topMenu-height);
+    height: 200px;
+    background-image: var(--imgURL);
+    background-position: 50% calc(-1 * var(--topPosition) / 2);
+    background-size: auto 400%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 90px;
+    position: relative;
+}
+
+.clipText::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5) var(--imgURL);
+    background-blend-mode: darken;
+    background-position: 50% calc(-1 * var(--topPosition) / 2);
+    background-size: auto 400%;
+    z-index: -1;
 }

@@ -39,6 +39,11 @@ export const languagePack = {
         },
         ContactUsPage: {
             index: {
+                "Contact Us": {
+                    "en-US": "Contact Us",
+                    "zh-TW": "聯絡我們",
+                    "ja-JP": null
+                },
                 "Test Message": {
                     "en-US": "Test Message",
                     "zh-TW": "測試訊息",
