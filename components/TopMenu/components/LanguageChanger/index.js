@@ -18,7 +18,7 @@ export default function LanguageChanger({ language, setLanguage }) {
                 <div tabIndex="0" className={styles.selectedLanguage}
                     onKeyDown={(event) => { if (event.key === "Enter") setShowDropdown(!showDropdown); }}
                     onClick={() => setShowDropdown(!showDropdown)}
-                    onBlur={() => setShowDropdown(false)}
+                    onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
                 >
                     {languagePack.languages[language].displayName}
                     <Image className={styles.globe} src={globe} alt="globe image" width={24} height={24} />
